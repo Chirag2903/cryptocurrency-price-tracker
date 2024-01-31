@@ -4,6 +4,7 @@ import { server } from '../index'
 import { Container, HStack, VStack, Image, Heading, Text } from '@chakra-ui/react';
 import Loader from './Loader'
 import ErrorComponent from './ErrorComponent'
+import Bot from '../components/Bot';
 
 
 const Exchanges = () => {
@@ -15,26 +16,26 @@ const Exchanges = () => {
 
   useEffect(() => {
     const fetchexchange = async () => {
-     try{
-      const { data } = await axios.get(`${server}/exchanges`);
-      setexchanges(data);
-      console.log(data);
-      setloading(false);
-     }
-     catch(error){
-      seterror(true);
-      setloading(false);
-     }
+      try {
+        const { data } = await axios.get(`${server}/exchanges`);
+        setexchanges(data);
+        console.log(data);
+        setloading(false);
+      }
+      catch (error) {
+        seterror(true);
+        setloading(false);
+      }
     }
     fetchexchange();
   }, []);
 
-  if(error) return <ErrorComponent/>
+  if (error) return <ErrorComponent />
 
   return (
     <Container maxW={'container.xl'}>
       {loading ? <Loader /> : (<>
-
+        <Bot position={'exchange'} />
         <HStack wrap={'wrap'} justifyContent={'center'}>
           {
             exchanges.map((i) => (
@@ -42,6 +43,7 @@ const Exchanges = () => {
             ))
           }
         </HStack>
+
       </>
       )}
     </Container>);

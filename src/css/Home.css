@@ -1,0 +1,84 @@
+.home-left {
+    width: 50%;
+    height: 80%;
+}
+
+.home-left h1 {
+    animation: slideFromLeft 1s ease-out;
+    margin-bottom: 2rem;
+    margin-top: 5rem;
+}
+
+.typed-text {
+    color: white;
+    font-weight: bolder;
+    background: linear-gradient(to left, #800080, #4B0082);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-size: 4.5rem;
+    display: inline;
+}
+
+@keyframes slideFromLeft {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.home-left p {
+    margin-bottom: 0.5rem;
+    color: darkgray;
+    font-size: 1.4rem;
+    opacity: 0;
+    animation: fadeInText 1s ease-out forwards 1s;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.home-right {
+    width: 40%;
+    height: 80%;
+}
+
+.home-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    animation: slideFromRight 1s ease-out;
+}
+
+@keyframes slideFromRight {
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+}
+
+.homepage-right img {
+    width: 42%;
+    height: 65%;
+    animation: moveUpDown 1.5s infinite alternate
+}
+
+.resize-handle {
+    width: 10vw;
+    height: 15vh;
+    right: 100px;
+    cursor: ew-resize;
+}

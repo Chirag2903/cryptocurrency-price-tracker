@@ -1,0 +1,102 @@
+.bot {
+    width: 8vw;
+    height: 16vh;
+    border-radius: 50%;
+    background: linear-gradient(to left, #800080, #4B0082);
+    position: fixed;
+    transform: translate(42rem, 11rem);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    display: flex;
+    justify-content: center;
+}
+
+.bot.show {
+    opacity: 1;
+}
+
+.bot.exchange {
+    transform: translate(78rem, 30rem);
+}
+
+.bot.coins {
+    transform: translate(78rem, 25rem);
+}
+
+.bot img {
+    width: 90%;
+    height: 100%;
+    /* object-fit: contain; */
+    object-fit: contain;
+}
+
+.bot h1 {
+    background: linear-gradient(to left, #800080, #4B0082);
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+}
+
+.bot.box {
+    width: 20vw;
+    height: 35vh;
+    border-radius: 0%;
+    position: fixed;
+    transform: translate(35rem, 6rem);
+    background: linear-gradient(to left, #800080, #4B0082);
+    border-radius: 20px;
+}
+
+.bot.box.exchange {
+    transform: translate(61rem, 22rem);
+}
+
+.bot.box.coins {
+    transform: translate(61rem, 16rem);
+}
+
+.box-container h1 {
+    color: white;
+}
+
+.box-container-1 {
+    width: 20vw;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    padding-left: 1rem;
+
+}
+
+.box-container-1 h1 {
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+
+.box-container-1 h2 {
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.box-container h3,
+.box-container h2 {
+    font-size: 0.8rem;
+    color: white;
+    padding: 0.5rem;
+}
+
+.box-container a {
+    font-size: 0.8rem;
+    text-decoration: underline;
+    color: white;
+    padding: 0.5rem;
+}
+
+
+.box-container-1 img {
+    width: 35%;
+    height: 100%;
+
+}

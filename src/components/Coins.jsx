@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { server } from '../index'
-import { Button, Container, HStack, RadioGroup, Radio} from '@chakra-ui/react';
+import { Button, Container, HStack, RadioGroup, Radio } from '@chakra-ui/react';
 import Loader from './Loader'
 import ErrorComponent from './ErrorComponent'
 import Coincards from './Coincards';
+import Bot from '../components/Bot';
 
 
 const Coins = () => {
@@ -45,14 +46,15 @@ const Coins = () => {
       {loading ? <Loader /> : (<>
 
 
-<RadioGroup value={currency} onChange={setcurrency} p={'8'}>
-  <HStack spacing={'4'}>
-    <Radio value={"inr"}>₹</Radio>
-    <Radio value={"eur"}>€</Radio>
-    <Radio value={"usd"}>$</Radio>
-''
-  </HStack>
-</RadioGroup>
+        <RadioGroup value={currency} onChange={setcurrency} p={'8'}>
+          <HStack spacing={'4'}>
+            <Radio value={"inr"}>₹</Radio>
+            <Radio value={"eur"}>€</Radio>
+            <Radio value={"usd"}>$</Radio>
+            ''
+          </HStack>
+        </RadioGroup>
+        <Bot position={'coins'} />
         <HStack wrap={'wrap'} justifyContent={'center'}>
           {
             coins.map((i) => (
@@ -63,7 +65,7 @@ const Coins = () => {
         <HStack w={'full'} overflowX="auto" p={'8'}>
           {
             btns.map((items, index) => (
-              <Button  bgColor={"blackAlpha.900"} color={'white'} onClick={() => changepage(index + 1)}>{index + 1}</Button>
+              <Button bgColor={"blackAlpha.900"} color={'white'} onClick={() => changepage(index + 1)}>{index + 1}</Button>
             )
             )
           }
